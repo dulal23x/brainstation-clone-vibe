@@ -30,7 +30,7 @@ export function AiExcellence() {
           </a>
           <img
             src={img.url}
-            alt="Brain Station 23 engineers in a workshop session"
+            alt="Dulal's Digital team in a workshop session"
             className="mt-10 w-full rounded-2xl shadow-elevated"
           />
         </div>

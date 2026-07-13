@@ -7,7 +7,7 @@ export function JoinTeam() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-5 lg:grid-cols-2 lg:gap-16 lg:px-10">
         <img
           src={img.url}
-          alt="Brain Station 23 engineers collaborating"
+          alt="Dulal's Digital team collaborating"
           className="w-full rounded-2xl shadow-elevated"
         />
         <div>

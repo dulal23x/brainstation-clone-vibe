@@ -19,7 +19,7 @@ export function ProcessTimeline() {
           </h2>
           <img
             src={img.url}
-            alt="Brain Station 23 team planning a project"
+            alt="Dulal's Digital growth team planning a launch"
             className="mt-10 w-full rounded-2xl shadow-elevated"
           />
         </div>
