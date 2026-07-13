@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import logo from "@/assets/bs23/BS23Dark-Logo.svg.asset.json";
+import logo from "@/assets/dd/dulalsdigital-logo.png.asset.json";
 
 const NAV = [
   { label: "Services", href: "#marketing-services" },
