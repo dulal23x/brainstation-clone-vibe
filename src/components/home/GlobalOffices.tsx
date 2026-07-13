@@ -1,7 +1,8 @@
 import { MapPin } from "lucide-react";
 
 const OFFICES = [
-  { city: "Dhaka", country: "Bangladesh", tag: "Global HQ", addr: "Plot 02, Bir Uttam A K Khandakar Road, Mohakhali C/A, Dhaka 1212" },
+  { city: "Albuquerque", country: "USA", tag: "HQ", addr: "1201 Mountain Road NW, Albuquerque, NM 87104" },
+  { city: "Dhaka", country: "Bangladesh", tag: "Engineering hub", addr: "Plot 02, Bir Uttam A K Khandakar Road, Mohakhali C/A, Dhaka 1212" },
   { city: "Chittagong", country: "Bangladesh", addr: "Agrabad Commercial Area, Chattogram 4100" },
   { city: "Amsterdam", country: "Netherlands", addr: "WTC, Strawinskylaan, Amsterdam" },
   { city: "Tokyo", country: "Japan", addr: "Minato City, Tokyo" },
@@ -16,7 +17,7 @@ export function GlobalOffices() {
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">Global Offices</p>
           <h2 className="mt-3 text-[34px] font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl">
-            Delivering from 6 offices, serving 36+ countries
+            Headquartered in Albuquerque, delivering across 36+ countries
           </h2>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">

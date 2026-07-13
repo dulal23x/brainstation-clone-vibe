@@ -78,25 +78,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Brain Station 23 — Build AI-Powered, Scalable Software" },
+      { title: "Dulal's Digital LLC — Results-driven marketing + engineering" },
       {
         name: "description",
         content:
-          "From fintech to eCommerce, Brain Station 23 delivers end-to-end software solutions tailored to your business — fast, flexible, and reliable.",
+          "Dulal's Digital LLC delivers lead generation, paid media, and full-stack engineering for ambitious brands. Founded by Dulal Hussain.",
       },
-      { name: "author", content: "Brain Station 23" },
-      { property: "og:title", content: "Brain Station 23 — Build AI-Powered, Scalable Software" },
+      { name: "author", content: "Dulal's Digital LLC" },
+      { property: "og:title", content: "Dulal's Digital LLC — Results-driven marketing + engineering" },
       {
         property: "og:description",
         content:
-          "From fintech to eCommerce, Brain Station 23 delivers end-to-end software solutions tailored to your business — fast, flexible, and reliable.",
+          "Lead generation, paid media, and full-stack engineering under one roof — from qualified leads to shipped software.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Brain Station 23 — Build AI-Powered, Scalable Software" },
-      { name: "twitter:description", content: "From fintech to eCommerce, Brain Station 23 delivers end-to-end software solutions tailored to your business — fast, flexible, and reliable." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2c8fd3dd-942d-4523-9160-32502dedbe13/id-preview-242903d3--34bb58fe-e0b9-43d9-8ff9-2d299344a4db.lovable.app-1783949909879.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2c8fd3dd-942d-4523-9160-32502dedbe13/id-preview-242903d3--34bb58fe-e0b9-43d9-8ff9-2d299344a4db.lovable.app-1783949909879.png" },
+      { name: "twitter:title", content: "Dulal's Digital LLC — Results-driven marketing + engineering" },
+      { name: "twitter:description", content: "Lead generation, paid media, and full-stack engineering under one roof — from qualified leads to shipped software." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

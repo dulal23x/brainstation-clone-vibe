@@ -24,7 +24,7 @@ export function ContactCTA() {
       toast.success("Thanks! We'll get back to you within one business day.");
       (e.target as HTMLFormElement).reset();
     } catch (err) {
-      toast.error("Something went wrong. Please try again or email hello@brainstation-23.com.");
+      toast.error("Something went wrong. Please try again or email dulal@dulalsdigital.com.");
       console.error(err);
     } finally {
       setLoading(false);
@@ -37,12 +37,21 @@ export function ContactCTA() {
         <div>
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">Let's talk</p>
           <h2 className="mt-3 text-[34px] font-bold leading-tight sm:text-4xl lg:text-5xl">
-            Ready to scale your team?
+            Are you ready for better results?
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-navy-foreground/70">
-            Tell us what you're building. We'll come back within one business day with a scoped plan
-            and a delivery pod.
+            Tell us about your growth goals or the product you're building. We'll come back within
+            one business day with a scoped proposal.
           </p>
+          <div className="mt-8 space-y-2 text-sm text-navy-foreground/75">
+            <p className="font-semibold text-navy-foreground">Dulal's Digital LLC</p>
+            <p>1201 Mountain Road NW, Albuquerque, NM 87104</p>
+            <p>
+              <a href="mailto:dulal@dulalsdigital.com" className="text-accent hover:underline">
+                dulal@dulalsdigital.com
+              </a>
+            </p>
+          </div>
         </div>
         <form
           onSubmit={onSubmit}
@@ -88,7 +97,7 @@ export function ContactCTA() {
             className="sm:col-span-2 inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground transition hover:opacity-90 disabled:opacity-60"
           >
             {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
-            {loading ? "Sending…" : "Schedule a Call"}
+            {loading ? "Sending…" : "Get your proposal"}
             {!loading && <ArrowRight className="h-4 w-4" />}
           </button>
         </form>

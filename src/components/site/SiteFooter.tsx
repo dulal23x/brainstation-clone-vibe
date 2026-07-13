@@ -21,12 +21,12 @@ const COLS = [
     links: ["About us", "Leadership", "Careers", "Newsroom", "Contact"],
   },
   {
-    title: "Services",
-    links: ["Custom Software", "AI & ML", "Mobile Apps", "Cloud & DevOps", "QA & Test"],
+    title: "Growth Services",
+    links: ["Lead Generation", "Google Ads / PPC", "Facebook & Meta Ads", "Marketing Strategy", "Conversion Optimization"],
   },
   {
-    title: "Industries",
-    links: ["Fintech", "Healthcare", "Retail", "Telecom", "Government"],
+    title: "Engineering Services",
+    links: ["Custom Software", "AI & ML", "Mobile Apps", "Cloud & DevOps", "QA & Test"],
   },
 ];
 
@@ -55,11 +55,22 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-5 lg:px-10">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4 lg:grid-cols-5">
           <div className="col-span-2 lg:col-span-2">
-            <img src={logo.url} alt="Brain Station 23" className="h-8 w-auto brightness-0 invert" />
+            <div className="flex items-center gap-3">
+              <img src={logo.url} alt="" aria-hidden className="h-8 w-auto brightness-0 invert" />
+              <span className="text-lg font-bold tracking-tight text-navy-foreground">
+                Dulal's Digital<span className="text-accent">.</span>
+              </span>
+            </div>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-navy-foreground/70">
-              A global custom software company building AI-powered, scalable platforms for
-              startups and enterprises since 2006.
+              Dulal's Digital LLC pairs a growth-marketing crew with two decades of engineering
+              depth — from qualified leads to shipped software. Founded by Dulal Hussain.
             </p>
+            <address className="not-italic mt-5 text-sm text-navy-foreground/70">
+              1201 Mountain Road NW<br />Albuquerque, NM 87104, United States<br />
+              <a href="mailto:dulal@dulalsdigital.com" className="text-accent hover:underline">
+                dulal@dulalsdigital.com
+              </a>
+            </address>
             <form onSubmit={onSubscribe} className="mt-6 flex max-w-md gap-2">
               <input
                 required
@@ -121,7 +132,7 @@ export function SiteFooter() {
 
 
         <p className="mt-8 text-center text-xs text-navy-foreground/60">
-          © {new Date().getFullYear()} Brain Station 23 PLC. All rights reserved.
+          © {new Date().getFullYear()} Dulal's Digital LLC. All rights reserved. Engineering delivery powered by Brain Station 23.
         </p>
       </div>
     </footer>
