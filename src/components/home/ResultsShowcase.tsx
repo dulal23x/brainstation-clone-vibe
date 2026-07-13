@@ -3,6 +3,7 @@ import iconYellow from "@/assets/dd/icon-building-yellow.png.asset.json";
 type Result = { stat: string; label: string; title: string; industry: string };
 
 const RESULTS: Result[] = [
+  { stat: "5×", label: "Revenue growth", title: "Paid media rebuild for Outco / ApplyPass", industry: "SaaS · Career-tech" },
   { stat: "114%", label: "Campaign CTR increase", title: "Facebook Ads for SaaS / Insurance", industry: "Medicare · SaaS" },
   { stat: "670", label: "New leads delivered", title: "Google Ads for a plumbing company", industry: "Home services" },
   { stat: "122%", label: "Revenue goal exceeded", title: "Marketing strategy for a coaching brand", industry: "Coaching" },
@@ -10,6 +11,7 @@ const RESULTS: Result[] = [
   { stat: "-47%", label: "Cost per lead", title: "Paid ads for a beauty education brand", industry: "Beauty · Education" },
   { stat: "375", label: "New qualified leads", title: "Google Ads for a med spa", industry: "Healthcare · Med Spa" },
 ];
+
 
 export function ResultsShowcase() {
   return (
