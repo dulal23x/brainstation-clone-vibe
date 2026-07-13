@@ -19,7 +19,8 @@ const ROW2 = [l31, l32, l33, l34, l35, l36];
 
 
 export function TrustBar() {
-  const loop = [...LOGOS, ...LOGOS];
+  const loop1 = [...ROW1, ...ROW1];
+  const loop2 = [...ROW2, ...ROW2];
   return (
     <section className="border-y bg-background py-14">
       <div className="mx-auto max-w-7xl px-5 lg:px-10">
@@ -27,19 +28,19 @@ export function TrustBar() {
           Trusted by fast-moving tech teams<br className="sm:hidden" /> from startups to enterprises
         </h2>
       </div>
-      <div className="relative mt-10 overflow-hidden">
+      <div className="relative mt-10 space-y-6 overflow-hidden">
         <div className="marquee-track flex w-max items-center gap-16 px-8">
-          {loop.map((logo, i) => (
-            <img
-              key={i}
-              src={logo.url}
-              alt=""
-              aria-hidden
-              className="h-10 w-auto object-contain opacity-80"
-            />
+          {loop1.map((logo, i) => (
+            <img key={i} src={logo.url} alt="" aria-hidden className="h-10 w-auto object-contain opacity-80" />
+          ))}
+        </div>
+        <div className="marquee-track flex w-max items-center gap-16 px-8" style={{ animationDirection: "reverse", animationDuration: "50s" }}>
+          {loop2.map((logo, i) => (
+            <img key={i} src={logo.url} alt="" aria-hidden className="h-10 w-auto object-contain opacity-80" />
           ))}
         </div>
       </div>
     </section>
   );
 }
+
