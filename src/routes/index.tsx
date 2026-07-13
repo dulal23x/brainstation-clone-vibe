@@ -4,10 +4,14 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { HeroSection } from "@/components/home/HeroSection";
 import { TrustBar } from "@/components/home/TrustBar";
+import { LeadGenHero } from "@/components/home/LeadGenHero";
+import { MarketingServices } from "@/components/home/MarketingServices";
 import { CapabilitiesGrid } from "@/components/home/CapabilitiesGrid";
 import { IndustriesGrid } from "@/components/home/IndustriesGrid";
+import { ResultsShowcase } from "@/components/home/ResultsShowcase";
 import { AiExcellence } from "@/components/home/AiExcellence";
 import { ProductsGrid } from "@/components/home/ProductsGrid";
+import { ValuesBand } from "@/components/home/ValuesBand";
 import { CompanyStory } from "@/components/home/CompanyStory";
 import { TechStackGrid } from "@/components/home/TechStackGrid";
 import { ProcessTimeline } from "@/components/home/ProcessTimeline";
@@ -19,17 +23,17 @@ import { ContactCTA } from "@/components/home/ContactCTA";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Brain Station 23 — Build AI-Powered, Scalable Software" },
+      { title: "Dulal's Digital LLC — Results-driven marketing + engineering" },
       {
         name: "description",
         content:
-          "From fintech to eCommerce, Brain Station 23 delivers end-to-end software solutions tailored to your business — fast, flexible, and reliable.",
+          "Lead generation, paid media, and full-stack engineering for ambitious brands. Founded by Dulal Hussain — Dulal's Digital LLC.",
       },
-      { property: "og:title", content: "Brain Station 23 — Build AI-Powered, Scalable Software" },
+      { property: "og:title", content: "Dulal's Digital LLC — Results-driven marketing + engineering" },
       {
         property: "og:description",
         content:
-          "From fintech to eCommerce, Brain Station 23 delivers end-to-end software solutions tailored to your business — fast, flexible, and reliable.",
+          "Lead generation, paid media, and full-stack engineering under one roof — from qualified leads to shipped software.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -45,10 +49,14 @@ function Home() {
       <main>
         <HeroSection />
         <TrustBar />
+        <LeadGenHero />
+        <MarketingServices />
         <CapabilitiesGrid />
         <IndustriesGrid />
+        <ResultsShowcase />
         <AiExcellence />
         <ProductsGrid />
+        <ValuesBand />
         <CompanyStory />
         <TechStackGrid />
         <ProcessTimeline />

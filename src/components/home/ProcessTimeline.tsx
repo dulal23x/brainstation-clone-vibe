@@ -1,10 +1,11 @@
 import img from "@/assets/bs23/ctaimg-1.webp.asset.json";
 
 const STEPS = [
-  { n: "01", title: "Discover", body: "Business, users, data, constraints. A single artifact your whole team aligns on." },
-  { n: "02", title: "Design", body: "Systemized UX, architecture, and a build plan sized to your milestones." },
-  { n: "03", title: "Deliver", body: "AI-augmented sprints with weekly demos and measurable outcomes." },
-  { n: "04", title: "Run", body: "24/7 SRE, observability, and continuous modernization." },
+  { n: "01", title: "Discover", body: "Business, ICP, offer, data, and constraints — one artifact your whole team aligns on." },
+  { n: "02", title: "Generate demand", body: "Paid search, paid social, and content loops built to fill a qualified pipeline." },
+  { n: "03", title: "Convert", body: "Landing pages, offers, and follow-up sequences tuned until CPL bends down." },
+  { n: "04", title: "Build", body: "AI-augmented engineering sprints with weekly demos and measurable outcomes." },
+  { n: "05", title: "Scale", body: "24/7 run, observability, and continuous modernization across marketing + product." },
 ];
 
 export function ProcessTimeline() {
@@ -14,7 +15,7 @@ export function ProcessTimeline() {
         <div>
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">How we work</p>
           <h2 className="mt-3 text-[34px] font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl">
-            Our process — AI-optimized, transparent, scalable
+            From lead to launch — a single, transparent process
           </h2>
           <img
             src={img.url}

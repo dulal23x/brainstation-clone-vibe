@@ -3,10 +3,11 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/bs23/BS23Dark-Logo.svg.asset.json";
 
 const NAV = [
-  { label: "Services", href: "#capabilities" },
+  { label: "Services", href: "#marketing-services" },
+  { label: "Work", href: "#results" },
   { label: "Industries", href: "#industries" },
   { label: "Products", href: "#products" },
-  { label: "Resources", href: "#process" },
+  { label: "About", href: "#story" },
   { label: "Global Offices", href: "#offices" },
 ];
 
@@ -27,10 +28,13 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-10">
-        <a href="/" className="flex items-center gap-2">
-          <img src={logo.url} alt="Brain Station 23" className="h-8 w-auto" />
+        <a href="/" className="flex items-center gap-3">
+          <img src={logo.url} alt="" aria-hidden className="h-8 w-auto" />
+          <span className="hidden text-lg font-bold tracking-tight text-foreground sm:inline">
+            Dulal's Digital<span className="text-accent">.</span>
+          </span>
         </a>
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-7 lg:flex">
           {NAV.map((item) => (
             <a
               key={item.label}
@@ -38,7 +42,9 @@ export function SiteHeader() {
               className="flex items-center gap-1 text-[15px] font-medium text-foreground/85 transition hover:text-foreground"
             >
               {item.label}
-              {item.label !== "Global Offices" && <ChevronDown className="h-3.5 w-3.5 opacity-60" />}
+              {item.label !== "Global Offices" && item.label !== "About" && item.label !== "Work" && (
+                <ChevronDown className="h-3.5 w-3.5 opacity-60" />
+              )}
             </a>
           ))}
         </nav>
@@ -46,7 +52,7 @@ export function SiteHeader() {
           href="#contact"
           className="hidden rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-sm transition hover:opacity-90 lg:inline-flex"
         >
-          Schedule a Call
+          Get your proposal
         </a>
         <button
           aria-label="Menu"
@@ -74,7 +80,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               className="mt-3 rounded-full bg-accent px-5 py-3 text-center text-sm font-semibold text-accent-foreground"
             >
-              Schedule a Call
+              Get your proposal
             </a>
           </nav>
         </div>
