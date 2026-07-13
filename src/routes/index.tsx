@@ -1,24 +1,63 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { AnnouncementBar } from "@/components/site/AnnouncementBar";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { HeroSection } from "@/components/home/HeroSection";
+import { TrustBar } from "@/components/home/TrustBar";
+import { CapabilitiesGrid } from "@/components/home/CapabilitiesGrid";
+import { IndustriesGrid } from "@/components/home/IndustriesGrid";
+import { AiExcellence } from "@/components/home/AiExcellence";
+import { ProductsGrid } from "@/components/home/ProductsGrid";
+import { CompanyStory } from "@/components/home/CompanyStory";
+import { TechStackGrid } from "@/components/home/TechStackGrid";
+import { ProcessTimeline } from "@/components/home/ProcessTimeline";
+import { CaseStudies } from "@/components/home/CaseStudies";
+import { JoinTeam } from "@/components/home/JoinTeam";
+import { GlobalOffices } from "@/components/home/GlobalOffices";
+import { ContactCTA } from "@/components/home/ContactCTA";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Brain Station 23 — Build AI-Powered, Scalable Software" },
+      {
+        name: "description",
+        content:
+          "From fintech to eCommerce, Brain Station 23 delivers end-to-end software solutions tailored to your business — fast, flexible, and reliable.",
+      },
+      { property: "og:title", content: "Brain Station 23 — Build AI-Powered, Scalable Software" },
+      {
+        property: "og:description",
+        content:
+          "900+ engineers, 36+ countries served, since 2006. Custom software, AI/ML, mobile, cloud.",
+      },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <AnnouncementBar />
+      <SiteHeader />
+      <main>
+        <HeroSection />
+        <TrustBar />
+        <CapabilitiesGrid />
+        <IndustriesGrid />
+        <AiExcellence />
+        <ProductsGrid />
+        <CompanyStory />
+        <TechStackGrid />
+        <ProcessTimeline />
+        <CaseStudies />
+        <JoinTeam />
+        <GlobalOffices />
+        <ContactCTA />
+      </main>
+      <SiteFooter />
     </div>
   );
 }
