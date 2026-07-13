@@ -36,16 +36,16 @@ export function TrustBar() {
         <h2 className="text-center text-[22px] font-semibold text-foreground sm:text-2xl">
           Brands growing with Dulal's Digital
         </h2>
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+        <div className="mt-10 grid grid-cols-2 gap-5 sm:gap-8 md:grid-cols-4">
           {DD_CLIENTS.map((c) => (
             <div
               key={c.name}
-              className="flex h-24 w-[220px] items-center justify-center rounded-xl border bg-white p-5 shadow-card transition hover:-translate-y-1 hover:shadow-elevated"
+              className="flex h-32 w-full items-center justify-center rounded-2xl border bg-white p-6 shadow-card transition hover:-translate-y-1 hover:shadow-elevated sm:h-40 md:h-44"
             >
               <img
                 src={c.src}
                 alt={c.name}
-                className="max-h-14 w-auto max-w-full object-contain"
+                className="max-h-20 w-auto max-w-full object-contain sm:max-h-24 md:max-h-28"
               />
             </div>
           ))}
