@@ -45,7 +45,7 @@ export function TrustBar() {
               <img
                 src={c.src}
                 alt={c.name}
-                className="max-h-20 w-auto max-w-full object-contain sm:max-h-24 md:max-h-28"
+                className={`w-auto max-w-full object-contain ${c.scale}`}
               />
             </div>
           ))}
