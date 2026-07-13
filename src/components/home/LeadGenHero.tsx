@@ -42,21 +42,10 @@ export function LeadGenHero() {
           <img
             src={quote.url}
             alt="Client testimonial artwork"
-            className="mx-auto w-full max-w-[480px] rounded-2xl shadow-elevated"
+            className="mx-auto w-full max-w-[520px] rounded-2xl shadow-elevated"
           />
-          <div className="absolute -bottom-6 left-4 right-4 rounded-2xl bg-navy p-5 text-navy-foreground shadow-elevated sm:left-8 sm:right-8">
-            <div className="flex items-baseline gap-3">
-              <span className="text-4xl font-bold text-accent">5×</span>
-              <span className="text-sm font-medium text-navy-foreground/80">
-                Revenue growth for Outco / ApplyPass
-              </span>
-            </div>
-            <p className="mt-2 text-[13px] leading-relaxed text-navy-foreground/70">
-              A rebuilt paid-media engine, a new offer, and a 3-touch nurture sequence — deployed in
-              90 days.
-            </p>
-          </div>
         </div>
+
       </div>
     </section>
   );
