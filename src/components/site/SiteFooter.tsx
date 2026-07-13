@@ -132,7 +132,7 @@ export function SiteFooter() {
 
 
         <p className="mt-8 text-center text-xs text-navy-foreground/60">
-          © {new Date().getFullYear()} Dulal's Digital LLC. All rights reserved. Engineering delivery powered by Brain Station 23.
+          © {new Date().getFullYear()} Dulal's Digital LLC. All rights reserved.
         </p>
       </div>
     </footer>
