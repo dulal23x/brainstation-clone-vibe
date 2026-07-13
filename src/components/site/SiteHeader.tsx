@@ -28,12 +28,10 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-10">
-        <a href="/" className="flex items-center gap-3">
-          <img src={logo.url} alt="" aria-hidden className="h-8 w-auto" />
-          <span className="hidden text-lg font-bold tracking-tight text-foreground sm:inline">
-            Dulal's Digital<span className="text-accent">.</span>
-          </span>
+        <a href="/" className="flex items-center" aria-label="Dulal's Digital LLC">
+          <img src={logo.url} alt="Dulal's Digital" className="h-9 w-auto sm:h-10" />
         </a>
+
         <nav className="hidden items-center gap-7 lg:flex">
           {NAV.map((item) => (
             <a
