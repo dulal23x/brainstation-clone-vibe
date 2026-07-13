@@ -78,21 +78,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Brain Station 23 — Custom Software Development Company" },
+      { title: "Brain Station 23 — Build AI-Powered, Scalable Software" },
       {
         name: "description",
         content:
-          "Brain Station 23 builds AI-powered, scalable software for startups and enterprises. 900+ engineers, 36+ countries served since 2006.",
+          "From fintech to eCommerce, Brain Station 23 delivers end-to-end software solutions tailored to your business — fast, flexible, and reliable.",
       },
       { name: "author", content: "Brain Station 23" },
-      { property: "og:title", content: "Brain Station 23 — Custom Software Development" },
+      { property: "og:title", content: "Brain Station 23 — Build AI-Powered, Scalable Software" },
       {
         property: "og:description",
         content:
-          "AI-powered, scalable software delivered in weeks — from fintech to eCommerce, mobile to cloud.",
+          "From fintech to eCommerce, Brain Station 23 delivers end-to-end software solutions tailored to your business — fast, flexible, and reliable.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Brain Station 23 — Build AI-Powered, Scalable Software" },
+      { name: "twitter:description", content: "From fintech to eCommerce, Brain Station 23 delivers end-to-end software solutions tailored to your business — fast, flexible, and reliable." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2c8fd3dd-942d-4523-9160-32502dedbe13/id-preview-242903d3--34bb58fe-e0b9-43d9-8ff9-2d299344a4db.lovable.app-1783949909879.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2c8fd3dd-942d-4523-9160-32502dedbe13/id-preview-242903d3--34bb58fe-e0b9-43d9-8ff9-2d299344a4db.lovable.app-1783949909879.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -102,7 +106,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap",
       },
-      { rel: "icon", type: "image/webp", href: "/favicon.webp" },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.webp" },
     ],
   }),
   shellComponent: RootShell,

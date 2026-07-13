@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "900+ engineers, 36+ countries served, since 2006. Custom software, AI/ML, mobile, cloud.",
+          "From fintech to eCommerce, Brain Station 23 delivers end-to-end software solutions tailored to your business — fast, flexible, and reliable.",
       },
     ],
     links: [{ rel: "canonical", href: "/" }],
