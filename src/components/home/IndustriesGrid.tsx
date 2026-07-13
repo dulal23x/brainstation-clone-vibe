@@ -1,29 +1,25 @@
-import {
-  Landmark,
-  ShoppingBag,
-  GraduationCap,
-  HeartPulse,
-  Signal,
-  Factory,
-  Shirt,
-  Truck,
-  ShieldCheck,
-  ArrowRight,
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { ArrowRight, ShieldCheck } from "lucide-react";
+import i1 from "@/assets/bs23/6684761_3412943-1.svg.asset.json";
+import i2 from "@/assets/bs23/6764647_3425857-1.svg.asset.json";
+import i3 from "@/assets/bs23/721566_13-1.svg.asset.json";
+import i4 from "@/assets/bs23/9588744_4213537-1.svg.asset.json";
+import i5 from "@/assets/bs23/00000-01-1.svg.asset.json";
+import i6 from "@/assets/bs23/Frame-1618872771.svg.asset.json";
+import i7 from "@/assets/bs23/67909ed924615d402e05044f_Group-1321316638.svg.asset.json";
+import i8 from "@/assets/bs23/67909ed97087aee2c1ff0da4_Group-1413373285.svg.asset.json";
 
-type Ind = { icon: LucideIcon; title: string; body: string };
+type Ind = { img?: { url: string }; title: string; body: string };
 
 const IND: Ind[] = [
-  { icon: Landmark, title: "Fintech", body: "Digital banking, payments, and compliance-first platforms." },
-  { icon: ShoppingBag, title: "Retail & eCommerce", body: "Omnichannel storefronts, headless commerce, and CX." },
-  { icon: GraduationCap, title: "EdTech", body: "LMS, Moodle, and adaptive learning at national scale." },
-  { icon: HeartPulse, title: "Healthcare", body: "HIPAA-grade telehealth, EMR, and clinical workflow tools." },
-  { icon: Signal, title: "Telecom", body: "OSS/BSS modernization, self-care apps, and analytics." },
-  { icon: Factory, title: "Manufacturing", body: "IoT, MES, and supply-chain visibility platforms." },
-  { icon: Shirt, title: "RMG & Apparel", body: "PLM, factory ops, and sustainability reporting." },
-  { icon: Truck, title: "Logistics", body: "Fleet, last-mile, and warehouse orchestration." },
-  { icon: ShieldCheck, title: "Government", body: "Citizen services, e-governance, and secure identity." },
+  { img: i1, title: "Fintech", body: "Digital banking, payments, and compliance-first platforms." },
+  { img: i2, title: "Retail & eCommerce", body: "Omnichannel storefronts, headless commerce, and CX." },
+  { img: i3, title: "EdTech", body: "LMS, Moodle, and adaptive learning at national scale." },
+  { img: i4, title: "Healthcare", body: "HIPAA-grade telehealth, EMR, and clinical workflow tools." },
+  { img: i5, title: "Telecom", body: "OSS/BSS modernization, self-care apps, and analytics." },
+  { img: i6, title: "Manufacturing", body: "IoT, MES, and supply-chain visibility platforms." },
+  { img: i7, title: "RMG & Apparel", body: "PLM, factory ops, and sustainability reporting." },
+  { img: i8, title: "Logistics", body: "Fleet, last-mile, and warehouse orchestration." },
+  { title: "Government", body: "Citizen services, e-governance, and secure identity." },
 ];
 
 export function IndustriesGrid() {
@@ -45,8 +41,12 @@ export function IndustriesGrid() {
               key={i.title}
               className="rounded-2xl bg-navy-2 p-6 transition hover:bg-navy-2/70"
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-white/8 text-accent ring-1 ring-white/10">
-                <i.icon className="h-5 w-5" strokeWidth={1.75} />
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/8 ring-1 ring-white/10">
+                {i.img ? (
+                  <img src={i.img.url} alt="" aria-hidden className="h-8 w-8 object-contain" />
+                ) : (
+                  <ShieldCheck className="h-6 w-6 text-accent" strokeWidth={1.75} />
+                )}
               </div>
               <h3 className="mt-5 text-lg font-semibold">{i.title}</h3>
               <p className="mt-2 text-[14px] leading-relaxed text-navy-foreground/70">{i.body}</p>

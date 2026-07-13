@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
-import { Linkedin, Facebook, Youtube, Instagram, ArrowRight } from "lucide-react";
+import { Linkedin, Youtube, Instagram, ArrowRight } from "lucide-react";
 import { subscribeNewsletter } from "@/lib/contact.functions";
 import logo from "@/assets/bs23/BS23Dark-Logo.svg.asset.json";
 import iso1 from "@/assets/bs23/iso2.svg.asset.json";
 import iso2 from "@/assets/bs23/iso9.svg.asset.json";
 import cmmi from "@/assets/bs23/cmmi3.svg.asset.json";
 import clutch from "@/assets/bs23/clutch-logo_zaiioc-1-2.webp.asset.json";
+import aws from "@/assets/bs23/aws.svg.svg.asset.json";
+import msft from "@/assets/bs23/microsoft.svg.svg.asset.json";
+import inc5000 from "@/assets/bs23/inc-5000.svg.svg.asset.json";
+import ey from "@/assets/bs23/ey-entrepreneur-of-the-year.svg.svg.asset.json";
+import fLogo from "@/assets/bs23/f-logo-2.svg.asset.json";
+
 
 const COLS = [
   {
@@ -92,20 +98,27 @@ export function SiteFooter() {
             <img src={iso2.url} alt="ISO 9001" className="h-10 w-auto" />
             <img src={cmmi.url} alt="CMMI Level 3" className="h-10 w-auto" />
             <img src={clutch.url} alt="Clutch top developers" className="h-8 w-auto" />
+            <img src={aws.url} alt="AWS Partner" className="h-10 w-auto brightness-0 invert" />
+            <img src={msft.url} alt="Microsoft Partner" className="h-10 w-auto brightness-0 invert" />
+            <img src={inc5000.url} alt="Inc. 5000" className="h-10 w-auto brightness-0 invert" />
+            <img src={ey.url} alt="EY Entrepreneur of the Year" className="h-10 w-auto brightness-0 invert" />
           </div>
           <div className="flex items-center gap-3">
-            {[Linkedin, Facebook, Youtube, Instagram].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                aria-label="social"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/8 text-navy-foreground/80 transition hover:bg-accent hover:text-accent-foreground"
-              >
-                <Icon className="h-4 w-4" />
-              </a>
-            ))}
+            <a href="#" aria-label="LinkedIn" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/8 text-navy-foreground/80 transition hover:bg-accent hover:text-accent-foreground">
+              <Linkedin className="h-4 w-4" />
+            </a>
+            <a href="#" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/8 transition hover:bg-accent">
+              <img src={fLogo.url} alt="" aria-hidden className="h-4 w-4 object-contain" />
+            </a>
+            <a href="#" aria-label="YouTube" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/8 text-navy-foreground/80 transition hover:bg-accent hover:text-accent-foreground">
+              <Youtube className="h-4 w-4" />
+            </a>
+            <a href="#" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-full bg-white/8 text-navy-foreground/80 transition hover:bg-accent hover:text-accent-foreground">
+              <Instagram className="h-4 w-4" />
+            </a>
           </div>
         </div>
+
 
         <p className="mt-8 text-center text-xs text-navy-foreground/60">
           © {new Date().getFullYear()} Brain Station 23 PLC. All rights reserved.
