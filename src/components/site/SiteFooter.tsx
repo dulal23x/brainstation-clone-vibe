@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
-import { Linkedin, Facebook, Youtube, Instagram, ArrowRight } from "lucide-react";
+import { Linkedin, Youtube, Instagram, ArrowRight } from "lucide-react";
 import { subscribeNewsletter } from "@/lib/contact.functions";
 import logo from "@/assets/bs23/BS23Dark-Logo.svg.asset.json";
 import iso1 from "@/assets/bs23/iso2.svg.asset.json";
 import iso2 from "@/assets/bs23/iso9.svg.asset.json";
 import cmmi from "@/assets/bs23/cmmi3.svg.asset.json";
 import clutch from "@/assets/bs23/clutch-logo_zaiioc-1-2.webp.asset.json";
+import aws from "@/assets/bs23/aws.svg.svg.asset.json";
+import msft from "@/assets/bs23/microsoft.svg.svg.asset.json";
+import inc5000 from "@/assets/bs23/inc-5000.svg.svg.asset.json";
+import ey from "@/assets/bs23/ey-entrepreneur-of-the-year.svg.svg.asset.json";
+import fLogo from "@/assets/bs23/f-logo-2.svg.asset.json";
+
 
 const COLS = [
   {
