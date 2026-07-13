@@ -34,32 +34,37 @@ export function TrustBar() {
     <section className="border-y bg-background py-14">
       <div className="mx-auto max-w-7xl px-5 lg:px-10">
         <h2 className="text-center text-[22px] font-semibold text-foreground sm:text-2xl">
-          Companies we've helped grow — from startups to enterprises
+          Brands growing with Dulal's Digital
         </h2>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
           {DD_CLIENTS.map((c) => (
-            <img
+            <div
               key={c.name}
-              src={c.src}
-              alt={c.name}
-              className="h-12 w-auto max-w-[160px] object-contain opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0"
-            />
+              className="flex h-24 w-[220px] items-center justify-center rounded-xl border bg-white p-5 shadow-card transition hover:-translate-y-1 hover:shadow-elevated"
+            >
+              <img
+                src={c.src}
+                alt={c.name}
+                className="max-h-14 w-auto max-w-full object-contain"
+              />
+            </div>
           ))}
         </div>
       </div>
-      <div className="relative mt-10 space-y-6 overflow-hidden">
-        <div className="marquee-track flex w-max items-center gap-16 px-8">
+      <div className="relative mt-12 space-y-6 overflow-hidden opacity-60">
+        <div className="marquee-track flex w-max items-center gap-12 px-8">
           {loop1.map((logo, i) => (
-            <img key={i} src={logo.url} alt="" aria-hidden className="h-10 w-auto object-contain opacity-80" />
+            <img key={i} src={logo.url} alt="" aria-hidden className="h-8 w-auto object-contain" />
           ))}
         </div>
-        <div className="marquee-track flex w-max items-center gap-16 px-8" style={{ animationDirection: "reverse", animationDuration: "50s" }}>
+        <div className="marquee-track flex w-max items-center gap-12 px-8" style={{ animationDirection: "reverse", animationDuration: "50s" }}>
           {loop2.map((logo, i) => (
-            <img key={i} src={logo.url} alt="" aria-hidden className="h-10 w-auto object-contain opacity-80" />
+            <img key={i} src={logo.url} alt="" aria-hidden className="h-8 w-auto object-contain" />
           ))}
         </div>
       </div>
     </section>
+
   );
 }
 

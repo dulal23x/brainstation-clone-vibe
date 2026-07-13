@@ -19,10 +19,11 @@ export function CompanyStory() {
           </h2>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
             Dulal's Digital LLC blends a growth-marketing crew that has driven 5× revenue for SaaS
-            clients with two decades of engineering depth from our Brain Station 23 heritage. From
-            central banks to health networks to bootstrapped founders, we ship the whole loop —
-            demand, conversion, and the product behind it.
+            clients with two decades of enterprise engineering heritage. From central banks to
+            health networks to bootstrapped founders, we ship the whole loop — demand, conversion,
+            and the product behind it.
           </p>
+
           <dl className="mt-8 grid grid-cols-3 gap-6">
             {HIGHLIGHTS.map((h) => (
               <div key={h.label}>

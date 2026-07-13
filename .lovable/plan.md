@@ -1,118 +1,87 @@
-# Rebrand to Dulal's Digital LLC — Merge with Brain Station 23 Content
+# Full rebrand + lead-gen-first refinement
 
-## Goal
+Goal: finish the rebrand so **every** user-facing "Brain Station 23 / BS23" string reads as **Dulal's Digital LLC**, restructure the homepage to lead with marketing/growth content and demote software/engineering to secondary, brighten client logos, and unblock the Quotre-2 testimonial image.
 
-Transform the current Brain Station 23 clone into **Dulal's Digital LLC** — a hybrid growth-marketing + engineering agency. Keep every existing BS23 asset and content section, add Dulal's services (Lead Generation as the hero service), Dulal's case studies, client logos, brand statement, and NM address. Nothing is deleted; everything is merged.
+## 1. Remove blocking overlay on testimonial image
 
-## Content Audit — dulalsdigital.com
+In `src/components/home/LeadGenHero.tsx`:
+- Delete the absolutely-positioned navy card containing "5× Revenue growth for Outco / ApplyPass" + "A rebuilt paid-media engine…" — it currently covers the bottom of `Quotre-2.png`.
+- Keep only the framed image so the full testimonial artwork is visible.
+- Move the "5× revenue" proof point into `ResultsShowcase` as an extra stat card ("5×  Revenue growth · Outco / ApplyPass · SaaS") so the datapoint isn't lost.
 
-**Tagline / hero:** "Results-driven marketing for you." Founded by Dulal Hussain. CTAs: *Get Your Proposal*, *See Our Work*.
+## 2. Colorful, bigger client logos in TrustBar
 
-**Featured testimonial:** "How Dulal Increased Outco/ApplyPass Revenue by 5X."
+In `src/components/home/TrustBar.tsx`:
+- Remove `grayscale` / `hover:grayscale-0` and the `opacity-80` on the Dulal's client row.
+- Bump size from `h-12 max-w-[160px]` → `h-16 sm:h-20 max-w-[220px]`, increase gap to `gap-x-16 gap-y-8`.
+- Add a subtle white card wrapper (`rounded-xl bg-white p-4 shadow-card`) so the Outco white logo stays visible on light backgrounds.
+- Keep the BS23-heritage marquee rows below but tone them down further (smaller, `opacity-60`) so Dulal's clients read as primary.
+- Section heading rewrite: "Brands growing with Dulal's Digital".
 
-**Client logos:** Beeda, Outco, ApplyPass, Fitness Matrix.
+## 3. Site-wide rename: strip remaining "Brain Station 23 / BS23" copy
 
-**Case-study stats (Work page):**
-- 114% Campaign CTR Increase — Facebook Ads, SaaS/Insurance (Medicare)
-- 670 New Leads — Google Ads, Plumbing
-- 122% Revenue Goal Exceeded — Marketing Strategy, Coaching
-- 27% ↓ Cost Per Lead — Google Ads, Accounting
-- 47% ↓ Cost Per Lead — Paid Ads, Beauty Education
-- 375 New Qualified Leads — Google Ads, Med Spa
+Sweep these files and replace any user-visible BS23 / Brain Station 23 text with **Dulal's Digital** / **Dulal's Digital LLC** (asset filenames stay as-is — internal only):
 
-**About / positioning:** "Redefining Digital Marketing." 1MM monthly FB views, 1.2MM subscribers, 1M+ organic reach/mo. Core values: **THINK BIG · OWN IT · HAVE FUN**. "Specialists, not generalists — deep expertise in complex, fast-changing digital channels. Integrated solutions for full-funnel growth."
+- `SiteHeader.tsx` — wordmark, alt text, aria labels
+- `SiteFooter.tsx` — company name, copyright, alt text, awards caption
+- `HeroSection.tsx` — any residual BS23 phrasing in eyebrow/subhead
+- `CompanyStory.tsx` — reframe heritage line: "Our engineering roots trace back two decades of enterprise delivery" (no BS23 name in body copy)
+- `TechStackGrid.tsx`, `ProductsGrid.tsx`, `IndustriesGrid.tsx`, `CaseStudies.tsx`, `ProcessTimeline.tsx`, `JoinTeam.tsx`, `AiExcellence.tsx` — headings, blurbs, CTA labels rewritten as Dulal's Digital voice; drop any "at Brain Station 23" phrasing.
 
-**Contact:** Dulal's Digital LLC · 1201 Mountain Road NW, Albuquerque, NM 87104, USA · dulal@dulalsdigital.com
+Image `alt` attributes that reference BS23 → generic descriptive alts ("Team offsite", "Enterprise delivery team", etc.).
 
-**Services (implied from case-study coverage):** Google Ads (PPC), Facebook / Meta Ads, Marketing Strategy, Paid Social, Lead Generation, Conversion Rate Optimization, Creative / Design.
+## 4. Homepage re-order — marketing first, software secondary
 
-## Merged Service Catalog (Lead Gen = hero)
+New order in `src/routes/index.tsx`:
 
-New unified "What we do" — Dulal's marketing services first, BS23 engineering second:
+1. AnnouncementBar
+2. SiteHeader
+3. HeroSection (rewritten — lead-gen headline, growth stats replace "900+ Tech Professionals" chip; keep imagery)
+4. TrustBar (colorful Dulal's clients up top)
+5. LeadGenHero (no overlay)
+6. MarketingServices (6 growth services)
+7. ResultsShowcase (7 stat cards incl. 5× Outco)
+8. ValuesBand (Think Big · Own It · Have Fun)
+9. **New `GrowthPlaybook` section** — 4-step "how we generate demand" (Research → Offer → Launch → Optimize) with Dulal's copy
+10. **New `IndustriesWeGrow` section** — reframes IndustriesGrid around who Dulal's serves for lead gen (SaaS, Home Services, Coaching, Med Spa, Beauty, Professional Services, Fintech, Healthcare)
+11. CompanyStory (Dulal Hussain-led, engineering as heritage line)
+12. CaseStudies (Dulal's growth wins first, engineering wins second)
+13. ProcessTimeline (retitled "From first lead to shipped product")
+14. — collapsed "Engineering & product capability" band —
+    - CapabilitiesGrid + TechStackGrid + AiExcellence + ProductsGrid combined into a single tabbed/condensed section titled **"Engineering, when you're ready to build"** — visually smaller, one screen tall, secondary tone
+15. JoinTeam (rewritten as "Join a growth-first team")
+16. GlobalOffices (Albuquerque HQ first)
+17. ContactCTA
+18. SiteFooter
 
-**Growth & Marketing (Dulal's)**
-1. **Lead Generation** ⭐ hero — B2B/B2C pipeline building, qualified-lead delivery
-2. Google Ads / PPC Management
-3. Facebook & Meta Ads
-4. Full-Funnel Marketing Strategy
-5. Conversion Rate Optimization
-6. Creative & Ad Design
+## 5. Content rewrite — Dulal's voice, marketing-forward
 
-**Product & Engineering (BS23 — kept as-is)**
-7. Custom Software Development
-8. Mobile App Development
-9. AI & Machine Learning
-10. Cloud & DevOps
-11. QA & Test Engineering
-12. Managed Services
+Rewrite copy in every home section so software is a supporting capability, not the headline. Guiding rules:
+- Hero H1: "Results-driven marketing for ambitious brands."
+- Sub: "Lead generation, paid media, and conversion systems — with in-house engineering when your growth needs a product to back it up."
+- Every section eyebrow uses growth vocabulary (Pipeline, Demand, Conversion, Retention) before any engineering vocabulary.
+- Stats surfaced from Dulal's site: 1MM monthly reach, 1.2MM subscribers, 5× revenue, 375 leads, 122% goal beat.
+- CTAs standardized to **Get your proposal** / **See our work**.
 
-## Asset Plan
+## 6. Head + metadata
 
-Download from `dulalsdigital.com/wp-content/uploads/`:
-- `2026/02/Quotre-2-1024x1024.png` — hero quote/testimonial visual
-- `2025/01/beeda-2-1024x683.png` — Beeda logo
-- `2025/01/Outco-white-2.png` — Outco logo
-- `2026/01/Ap_logo-removebg-preview.png` — ApplyPass logo
-- `2026/01/fintess-matrix-logo.jpg` — Fitness Matrix logo
-- `2025/03/past-present-future-digital-marketing-bsp-237523486.jpg` — editorial image
-- `2025/04/icon-building-yellow.png` — case-study industry icon
+`__root.tsx` + `routes/index.tsx` head: strip any remaining BS23 phrasing, ensure `title` / `description` / `og:*` / `twitter:*` all say Dulal's Digital LLC and lead with lead-generation positioning.
 
-Upload each with `lovable-assets create` to `src/assets/dd/*.asset.json`. Filenames preserved. Existing 90+ BS23 assets untouched.
+## Files touched
 
-## Component / Section Changes
+Edited: `LeadGenHero.tsx`, `TrustBar.tsx`, `ResultsShowcase.tsx`, `SiteHeader.tsx`, `SiteFooter.tsx`, `HeroSection.tsx`, `CompanyStory.tsx`, `TechStackGrid.tsx`, `ProductsGrid.tsx`, `IndustriesGrid.tsx`, `CaseStudies.tsx`, `ProcessTimeline.tsx`, `JoinTeam.tsx`, `AiExcellence.tsx`, `CapabilitiesGrid.tsx`, `routes/index.tsx`, `routes/__root.tsx`.
 
-**Rebrand (site-wide)**
-- `SiteHeader.tsx` — swap BS23 wordmark for "Dulal's Digital" text lockup next to BS23 logo mark (keeps BS23 asset visible per requirement); nav gains **Work** and **Services** items; CTA becomes "Get Your Proposal"
-- `AnnouncementBar.tsx` — new copy: "Results-driven marketing + engineering — from qualified leads to shipped software."
-- `SiteFooter.tsx` — company name → **Dulal's Digital LLC**; address → 1201 Mountain Road NW, Albuquerque, NM 87104; email → dulal@dulalsdigital.com; keep BS23 awards/badges row intact and append Dulal's client logos
-- `__root.tsx` head — title/description/OG rebranded to Dulal's Digital; keep Manrope font
+New: `src/components/home/GrowthPlaybook.tsx`, `src/components/home/IndustriesWeGrow.tsx`, `src/components/home/EngineeringBand.tsx` (wraps the four engineering sections into one condensed secondary band).
 
-**Home route (`routes/index.tsx`) — new section order**
-1. `AnnouncementBar`
-2. `SiteHeader`
-3. **`HeroSection`** (rewritten) — H1 "Results-driven marketing for ambitious brands." Sub "Lead generation, paid media, and full-stack engineering under one roof — founded by Dulal Hussain." CTAs *Get Your Proposal* / *See Our Work*. Keeps existing BS23 hero imagery + stat chips (900+ Tech Professionals, 36+ Countries) unchanged
-4. **`TrustBar`** — prepend Dulal's client logos (Beeda, Outco, ApplyPass, Fitness Matrix) as row 1; keep existing BS23 marquee rows 2 & 3
-5. **`LeadGenHero` NEW** — dedicated Lead Generation flagship band with Quotre-2 visual, "5X Revenue Growth — Outco/ApplyPass" testimonial callout, 3 pillar bullets
-6. **`MarketingServices` NEW** — 6-card grid for the Dulal's services above; uses `icon-building-yellow.png` accents
-7. `CapabilitiesGrid` (BS23 engineering — unchanged, retitled "Engineering capabilities")
-8. `IndustriesGrid` (unchanged)
-9. **`ResultsShowcase` NEW** — 6 stat cards from Dulal's work page (114% CTR, 670 Leads, 122% revenue, 27% CPL, 47% CPL, 375 leads) with industry tags
-10. `AiExcellence` (unchanged)
-11. `ProductsGrid` (unchanged)
-12. **`ValuesBand` NEW** — "Think Big · Own It · Have Fun" three-column strip
-13. `CompanyStory` — copy rewrite: "Founded by Dulal Hussain, Dulal's Digital LLC blends two decades of engineering depth with a growth-marketing crew that has driven 5X revenue for SaaS clients and 1MM+ monthly reach." Keep BS23 group photo
-14. `TechStackGrid` (unchanged)
-15. `ProcessTimeline` — retitled "From lead to launch"; steps become Discover → Generate Demand → Convert → Build → Scale
-16. `CaseStudies` — keep 3 BS23 cards, append 3 Dulal's cards (Outco 5X, Beeda, ApplyPass) using Dulal's logos
-17. `JoinTeam` (unchanged)
-18. `GlobalOffices` — add Albuquerque, NM as HQ card at the top; keep BS23 offices below
-19. **`ContactCTA`** — headline "Are you ready for better results? Let's talk." with proposal-request form fields
+## Verification
 
-## Copy / Brand Rules
+- `bun run build`
+- Playwright at 1280×1800: confirm (a) no overlay on Quotre-2, (b) Dulal's client logos large + full color, (c) no "Brain Station 23 / BS23" text visible on the rendered homepage, (d) engineering band appears below the fold and reads as secondary.
 
-- Company name everywhere user-facing: **Dulal's Digital LLC**
-- Founder attribution retained: "Founded by Dulal Hussain"
-- BS23 mentions kept only as the engineering-heritage story inside `CompanyStory` and `TechStackGrid` context — never as the brand name
-- Do NOT delete any existing BS23 asset, image, section, or component
-- Manrope headings + existing color tokens preserved; add a warm yellow accent (`--brand-accent-yellow: #F4B400`) alongside existing navy/accent, sampled from Dulal's `icon-building-yellow.png`, wired via `styles.css`
+## Out of scope
 
-## Technical Details
-
-- New files:
-  - `src/components/home/LeadGenHero.tsx`
-  - `src/components/home/MarketingServices.tsx`
-  - `src/components/home/ResultsShowcase.tsx`
-  - `src/components/home/ValuesBand.tsx`
-  - 7 × `src/assets/dd/*.asset.json`
-- Edited: `AnnouncementBar`, `SiteHeader`, `SiteFooter`, `HeroSection`, `TrustBar`, `CompanyStory`, `ProcessTimeline`, `CaseStudies`, `GlobalOffices`, `ContactCTA`, `routes/index.tsx`, `routes/__root.tsx`, `styles.css`
-- Verify with `bun run build`, then a Playwright screenshot pass at 1280×1800 confirming (a) Dulal's logos in TrustBar, (b) new Lead Gen band, (c) results stat grid, (d) footer address = Albuquerque
-
-## Out of Scope
-
-- New standalone routes (`/services`, `/work`, `/about`, `/contact`) — homepage merge only, this phase
-- Inner-page BS23 rewrites
-- Real CRM/email wiring for the proposal form (uses existing `contact.functions.ts`)
-- Removing any BS23 asset, section, or copy block
-- Not literally 100 pages — plan is scoped to what's actionable; happy to expand any section on request
+- New standalone routes.
+- Removing or renaming any asset files under `src/assets/bs23/` (asset paths are internal; only visible copy/alt text changes).
+- Backend/contact-form logic changes.
 
 Approve to switch to build mode and execute.
