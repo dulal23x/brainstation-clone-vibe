@@ -19,10 +19,10 @@ import applypass from "@/assets/dd/ApplyPass.png.asset.json";
 import fitness from "@/assets/dd/fitness-matrix.jpg.asset.json";
 
 const DD_CLIENTS = [
-  { src: beeda.url, name: "Beeda" },
-  { src: outco.url, name: "Outco" },
-  { src: applypass.url, name: "ApplyPass" },
-  { src: fitness.url, name: "Fitness Matrix" },
+  { src: beeda.url, name: "Beeda", scale: "max-h-20 sm:max-h-24 md:max-h-28" },
+  { src: outco.url, name: "Outco", scale: "max-h-20 sm:max-h-24 md:max-h-28" },
+  { src: applypass.url, name: "ApplyPass", scale: "max-h-28 sm:max-h-32 md:max-h-36 scale-125" },
+  { src: fitness.url, name: "Fitness Matrix", scale: "max-h-20 sm:max-h-24 md:max-h-28" },
 ];
 const ROW1 = [l1, l2, l3, l4, l5, l6, l7, l8, l9];
 const ROW2 = [l31, l32, l33, l34, l35, l36];
@@ -45,7 +45,7 @@ export function TrustBar() {
               <img
                 src={c.src}
                 alt={c.name}
-                className="max-h-20 w-auto max-w-full object-contain sm:max-h-24 md:max-h-28"
+                className={`w-auto max-w-full object-contain ${c.scale}`}
               />
             </div>
           ))}
