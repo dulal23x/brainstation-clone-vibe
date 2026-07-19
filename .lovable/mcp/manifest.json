@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "sdk_version": "0.23.0",
+  "path": "/mcp",
+  "auth": {
+    "type": "oauth",
+    "issuer": "https://mysmxsosdwnknoriznvy.supabase.co/auth/v1",
+    "accepted_audiences": [
+      "authenticated"
+    ]
+  },
+  "mcp": {
+    "server": {
+      "name": "dulals-digital-mcp",
+      "version": "0.1.0",
+      "title": "Dulal's Digital LLC"
+    },
+    "tools": [
+      {
+        "name": "get_services",
+        "title": "Get services",
+        "description": "List the services Dulal's Digital LLC offers — lead generation, paid media, SEO, web design, engineering, and AI.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "submit_contact_inquiry",
+        "title": "Submit contact inquiry",
+        "description": "Submit a contact inquiry to Dulal's Digital LLC on behalf of the signed-in user. Use this when the user wants to reach out about a project, get a quote, or start a conversation.",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120,
+              "description": "Full name of the person submitting the inquiry."
+            },
+            "email": {
+              "type": "string",
+              "format": "email",
+              "maxLength": 200,
+              "description": "Contact email."
+            },
+            "message": {
+              "type": "string",
+              "minLength": 5,
+              "maxLength": 4000,
+              "description": "What the user wants to discuss — project, goals, timeline, budget."
+            },
+            "phone": {
+              "type": "string",
+              "maxLength": 40,
+              "description": "Optional phone number."
+            },
+            "company": {
+              "type": "string",
+              "maxLength": 200,
+              "description": "Optional company name."
+            }
+          },
+          "required": [
+            "name",
+            "email",
+            "message"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "subscribe_newsletter",
+        "title": "Subscribe to newsletter",
+        "description": "Subscribe an email address to the Dulal's Digital LLC newsletter.",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string",
+              "format": "email",
+              "maxLength": 200,
+              "description": "Email address to subscribe."
+            }
+          },
+          "required": [
+            "email"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
